@@ -23,7 +23,7 @@ app.post("/posts", (req, res) => {
   };
 
   axios
-    .post("http://localhost:4005/events", {
+    .post("http://event-bus-srv:4005/events", {
       type: "PostCreated",
       data: {
         id,
@@ -43,4 +43,7 @@ app.post("/events", (req, res) => {
   res.send({});
 });
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`));
+app.listen(port, () => {
+  console.log("v55");
+  console.log(`Example app listening on port ${port}!`);
+});
